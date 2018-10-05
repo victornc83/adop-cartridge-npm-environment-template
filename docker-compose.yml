@@ -1,0 +1,11 @@
+web:
+  container_name: ${SERVICE_NAME}
+  restart: always
+  image: nginx:1.15.4-alpine
+  net: ${DOCKER_NETWORK_NAME}
+  expose:
+    - "80"
+  labels:
+    - "PROJECT_NAME=${PROJECT_NAME}"
+    - "ENVIRONMENT_NAME=${ENVIRONMENT_NAME}"
+    - "ENVIRONMENT_TYPE=web"
